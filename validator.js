@@ -1,0 +1,21 @@
+var validator = require('validator');
+
+console.log(validator.isEmail('foo@bar.com')); //=> true
+console.log(validator.isEmail('foo@bar')); //=> false
+console.log(validator.isAlpha('foo@bar')); //=> false
+console.log(validator.isAlpha('Shubham')); //=> true
+console.log(validator.isAlpha('Shubham15')); //=> false
+console.log(validator.isAlphanumeric('Shubham')); //=> true
+console.log(validator.isAlphanumeric('Shubham15')); //=> true
+console.log(validator.isAlphanumeric('15')); //=> true
+console.log(validator.isAlphanumeric('@#$')); //=> false
+console.log(validator.isEmpty('@#$')); //=> false
+console.log(validator.isEmpty('')); //=> true
+console.log(validator.isMobilePhone('9751166348')); //=> true
+console.log(validator.isMobilePhone('9751166349', 'en-IN')); //=> true
+console.log(validator.isMobilePhone('975116634', 'en-IN')); //=> false
+console.log(validator.isMobilePhone('97511663499', 'en-IN')); //=> false
+console.log(validator.isPostalCode('221547', 'IN')); //=> true
+console.log(validator.isPostalCode('22154', 'IN')); //=> false
+console.log(validator.isPostalCode('2215499', 'IN')); //=> false
+console.log(validator.isStrongPassword('India@123', {minLength:8,minLowercase:1,minUppercase:1,minNumbers:1,minSymbols: 1})); //=> true
